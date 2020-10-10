@@ -62,11 +62,12 @@ class Can_I_Use_Cookies {
 		?>
         <div id="can-i-use-cookies" style="display: none;">
             <div class="container">
-                <img src="<? echo $option['image']; ?>" alt="Cookie">
-                <div class="text-container">
-                    <p class="title"><? echo $option['title']; ?></p>
-                    <p class="description"><? echo nl2br($option['content']); ?></p>
-
+                <div class="subcontainer">
+                    <img src="<? echo $option['image']; ?>" alt="Cookie">
+                    <div class="text-container">
+                        <p class="title"><? echo $option['title']; ?></p>
+                        <p class="description"><? echo nl2br($option['content']); ?></p>
+                    </div>
                 </div>
                 <div class="button-bar">
                     <button id="can-i-use-cookies-yes"><? echo $option['yes_button']; ?></button>

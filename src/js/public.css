@@ -23,13 +23,20 @@
     margin-left: auto;
 }
 
-#can-i-use-cookies .container img {
+#can-i-use-cookies .subcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#can-i-use-cookies img {
     height: inherit;
     max-width: 100px;
     max-height: 100px;
 }
 
-#can-i-use-cookies .container .text-container {
+#can-i-use-cookies .text-container {
     padding-left: 32px;
     padding-right: 32px;
     flex-grow: 1;
@@ -40,7 +47,7 @@
     justify-content: center;
 }
 
-#can-i-use-cookies .container .text-container .title {
+#can-i-use-cookies .title {
     font-weight: bold;
     font-size: 1em;
 
@@ -48,25 +55,91 @@
     margin: 0;
 }
 
-#can-i-use-cookies .container .text-container .description {
+#can-i-use-cookies .description {
     font-size: 1em;
     margin: 0;
     padding-top: 6px;
 }
 
-#can-i-use-cookies .container .button-bar {
+#can-i-use-cookies .button-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-#can-i-use-cookies .container .button-bar button {
+#can-i-use-cookies button {
     font-size: 1em;
     white-space: nowrap;
     cursor: pointer;
 }
 
-#can-i-use-cookies .container .button-bar button:first-child {
+#can-i-use-cookies button:first-child {
     margin-right: 8px;
+}
+
+@media screen and (max-width: 980px) {
+    #can-i-use-cookies .button-bar {
+        flex-direction: column;
+    }
+
+    #can-i-use-cookies button:first-child {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #can-i-use-cookies .container {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #can-i-use-cookies img {
+        max-width: 75px;
+        max-height: 75px;
+    }
+
+    #can-i-use-cookies .text-container {
+        padding-right: 0;
+        padding-left: 16px;
+    }
+
+    #can-i-use-cookies .button-bar {
+        padding-top: 8px;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    #can-i-use-cookies button:first-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #can-i-use-cookies {
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #can-i-use-cookies img {
+        display: none;
+    }
+
+    #can-i-use-cookies .text-container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #can-i-use-cookies .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    #can-i-use-cookies .description {
+        width: 100%;
+        text-align: justify;
+    }
 }
