@@ -1,7 +1,7 @@
 #can-i-use-cookies {
     display: block;
 
-    padding: 8px;
+    padding: 16px;
 
     position: fixed;
     bottom: 0;
@@ -64,6 +64,7 @@
 #can-i-use-cookies .container .button-bar button {
     font-size: 1em;
     white-space: nowrap;
+    cursor: pointer;
 }
 
 #can-i-use-cookies .container .button-bar button:first-child {
