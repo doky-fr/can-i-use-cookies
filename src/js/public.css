@@ -1,0 +1,71 @@
+#can-i-use-cookies {
+    display: block;
+
+    padding: 8px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: lightslategrey;
+}
+
+#can-i-use-cookies .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 1500px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#can-i-use-cookies .container img {
+    height: inherit;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#can-i-use-cookies .container .text-container {
+    padding-left: 32px;
+    padding-right: 32px;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#can-i-use-cookies .container .text-container .title {
+    font-weight: bold;
+    font-size: 1em;
+
+    padding: 0;
+    margin: 0;
+}
+
+#can-i-use-cookies .container .text-container .description {
+    font-size: 1em;
+    margin: 0;
+    padding-top: 6px;
+}
+
+#can-i-use-cookies .container .button-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#can-i-use-cookies .container .button-bar button {
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+#can-i-use-cookies .container .button-bar button:first-child {
+    margin-right: 8px;
+}
