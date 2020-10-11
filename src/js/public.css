@@ -1,6 +1,8 @@
 #can-i-use-cookies {
     display: block;
 
+    z-index: 99999;
+
     padding: 16px;
 
     position: fixed;
