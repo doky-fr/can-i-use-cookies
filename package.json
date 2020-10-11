@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "scripts": {
     "clean": "rm -rf build/ && rm -rf dest/",
-    "copy": "mkdir -p build/ && copyfiles -u 1 \"src/**/*\" build/ -e \"src/js/**/*\" && copyfiles composer.json build/",
+    "copy": "mkdir -p build/ && copyfiles -u 1 \"src/**/*\" build/ -e \"src/js/public.*\" && copyfiles composer.json build/",
     "apply-mustache": "yarn run copy && node mustache.js | mustache - src/can-i-use-cookies.php > build/can-i-use-cookies.php",
     "build": "yarn run apply-mustache && wp-scripts build --config webpack.config.js",
     "zip": "yarn run build && mkdir -p dest && cd build && bestzip ../dest/can-i-use-cookies.zip .",
