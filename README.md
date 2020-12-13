@@ -1,4 +1,6 @@
-![Can I Use Cookies ?](./banner.png)
+# Can I Use Cookies ? WordPress plugin
+
+![Can I Use Cookies ?](./assets/banner-1544x500.jpg)
 
 WordPress plugin that does one thing but does it right:
 
