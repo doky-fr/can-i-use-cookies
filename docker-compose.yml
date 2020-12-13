@@ -10,20 +10,6 @@ services:
       MYSQL_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
 
-  phpmyadmin:
-    depends_on:
-      - db
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    ports:
-      - 8888:80
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_USER: root
-      PMA_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: root
-
   wordpress:
     image: wordpress:latest
     depends_on:

@@ -5,7 +5,9 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class Can_I_Use_Cookies_Admin_Pages {
+require_once plugin_dir_path( __FILE__ ) . '/class-can-i-use-cookies-defaults.php';
+
+class Can_I_Use_Cookies_Admin_Page {
 	private $options;
 
 	private static $page_name = 'can-i-use-cookies-settings';
@@ -17,8 +19,8 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 	public function add_page() {
 		add_options_page(
-			'Consentement Cookies',
-			'Consentement Cookies',
+			__( 'Cookies Consent', 'can-i-use-cookies' ),
+			__( 'Cookies Consent', 'can-i-use-cookies' ),
 			'manage_options',
 			self::$page_name,
 			array( $this, 'create_admin_page' )
@@ -29,17 +31,16 @@ class Can_I_Use_Cookies_Admin_Pages {
 		// Refresh options
 		$this->options = get_option( 'can-i-use-cookies' );
 		?>
-		<div class="wrap">
-			<h1>Configuration du popup de consentement des cookies</h1>
-			<form method="post" action="options.php">
+        <div class="wrap">
+            <h1><? esc_html_e( 'Setup the cookies consent popup', 'can-i-use-cookies' ) ?></h1>
+            <form method="post" action="options.php">
 				<?php
-				// This prints out all hidden setting fields
 				settings_fields( 'can-i-use-cookies' );
 				do_settings_sections( self::$page_name );
 				submit_button();
 				?>
-			</form>
-		</div>
+            </form>
+        </div>
 		<?php
 	}
 
@@ -59,14 +60,14 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 		add_settings_section(
 			'can-i-use-cookies-texts-section',
-			'Textes à afficher dans la popup de consentement',
+			__( 'Various texts of the popup', 'can-i-use-cookies' ),
 			array( $this, 'print_section_info_texts' ),
 			self::$page_name
 		);
 
 		add_settings_field(
 			'title',
-			'Titre',
+			__( 'Title', 'can-i-use-cookies' ),
 			array( $this, 'title_callback' ),
 			self::$page_name,
 			'can-i-use-cookies-texts-section'
@@ -74,7 +75,7 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 		add_settings_field(
 			'content',
-			'Explication',
+			__( 'Content', 'can-i-use-cookies' ),
 			array( $this, 'content_callback' ),
 			self::$page_name,
 			'can-i-use-cookies-texts-section'
@@ -82,7 +83,7 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 		add_settings_field(
 			'yes_button',
-			'Bouton "Accepter"',
+			__( '"Accept" button', 'can-i-use-cookies' ),
 			array( $this, 'yes_button_callback' ),
 			self::$page_name,
 			'can-i-use-cookies-texts-section'
@@ -90,7 +91,7 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 		add_settings_field(
 			'no_button',
-			'Bouton "Refuser"',
+			__( '"Deny" button', 'can-i-use-cookies' ),
 			array( $this, 'no_button_callback' ),
 			self::$page_name,
 			'can-i-use-cookies-texts-section'
@@ -102,14 +103,14 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 		add_settings_section(
 			'can-i-use-cookies-images-section',
-			'URL de l\'image',
+			__( 'Popup image', 'can-i-use-cookies' ),
 			array( $this, 'print_section_info_images' ),
 			self::$page_name
 		);
 
 		add_settings_field(
 			'image',
-			'Image',
+			__( 'Image URL', 'can-i-use-cookies' ),
 			array( $this, 'image_callback' ),
 			self::$page_name,
 			'can-i-use-cookies-images-section'
@@ -123,7 +124,7 @@ class Can_I_Use_Cookies_Admin_Pages {
 	 *
 	 * @return array
 	 */
-	public function sanitize( $input ) {
+	public function sanitize( array $input ): array {
 		$new_input = array();
 
 		if ( isset( $input['title'] ) ) {
@@ -151,45 +152,51 @@ class Can_I_Use_Cookies_Admin_Pages {
 
 
 	public function print_section_info_texts() {
-		print 'Veuillez saisir les différents textes affichés dans la popup de consentement.';
+		esc_attr_e( 'Please specify the various texts used by the consent popup.', 'can-i-use-cookies' );
 	}
 
 	public function print_section_info_images() {
-		print 'Veuillez saisir l\'URL de l\'image affichée sur la gauche.';
+		esc_attr_e( 'Please specify the URL of the image displayed in the consent popup.', 'can-i-use-cookies' );
+		print '<br/>';
+		esc_attr_e( 'If omitted, a default cookie image will be displayed.', 'can-i-use-cookies' );
 	}
 
 	public function title_callback() {
 		printf(
-			'<input type="text" name="can-i-use-cookies[title]" value="%s" />',
-			isset( $this->options['title'] ) ? esc_attr( $this->options['title'] ) : ''
+			'<input type="text" name="can-i-use-cookies[title]" value="%s" placeholder="%s" />',
+			isset( $this->options['title'] ) ? esc_attr( $this->options['title'] ) : '',
+			Can_I_Use_Cookies_Defaults::title()
 		);
 	}
 
 	public function content_callback() {
 		printf(
-			'<textarea name="can-i-use-cookies[content]" rows="5" cols="50">%s</textarea>',
+			'<textarea name="can-i-use-cookies[content]" rows="5" cols="50" placeholder="%s">%s</textarea>',
+			Can_I_Use_Cookies_Defaults::content(),
 			isset( $this->options['content'] ) ? esc_html( $this->options['content'] ) : ''
 		);
 	}
 
 	public function yes_button_callback() {
 		printf(
-			'<input type="text" name="can-i-use-cookies[yes_button]" value="%s" />',
-			isset( $this->options['yes_button'] ) ? esc_attr( $this->options['yes_button'] ) : ''
+			'<input type="text" name="can-i-use-cookies[yes_button]" value="%s" placeholder="%s"/>',
+			isset( $this->options['yes_button'] ) ? esc_attr( $this->options['yes_button'] ) : '',
+			Can_I_Use_Cookies_Defaults::yes_button()
 		);
 	}
 
 	public function no_button_callback() {
 		printf(
-			'<input type="text" name="can-i-use-cookies[no_button]" value="%s" />',
-			isset( $this->options['no_button'] ) ? esc_attr( $this->options['no_button'] ) : ''
+			'<input type="text" name="can-i-use-cookies[no_button]" value="%s" placeholder="%s"/>',
+			isset( $this->options['no_button'] ) ? esc_attr( $this->options['no_button'] ) : '',
+			Can_I_Use_Cookies_Defaults::no_button()
 		);
 	}
 
 	public function image_callback() {
 		printf(
-			'<input type="text" name="can-i-use-cookies[image]" value="%s" />',
+			'<input type="text" name="can-i-use-cookies[image]" value="%s"/>',
 			isset( $this->options['image'] ) ? esc_url( $this->options['image'] ) : ''
-		);
+        );
 	}
 }

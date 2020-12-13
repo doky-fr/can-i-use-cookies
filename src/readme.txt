@@ -1,21 +1,31 @@
-# Can I Use Cookies ? WordPress plugin
+=== Can i use cookies ? ===
+Contributors: fcaylus
+Tags: cookies, consent, gdpr, ccpa
+Requires at least: 5.4
+Tested up to: 5.6
+Stable tag: trunk
+Requires PHP: 7.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-![Can I Use Cookies ?](./assets/banner-1544x500.jpg)
+Ask the user for his consent about cookies and tracking, and comply with the EU GDPR privacy law and CCPA regulations.
 
-WordPress plugin that does one thing but does it right:
+== Description ==
+
+Does one thing but does it right:
 
 **Ask the user for his consent about cookies and tracking.**
 
-## Features
+### Features
 
 - Display a popup on every page and ask the user for his consent about tracking
 - "Approve" and "Deny" button: compliant with GDPR and CCPA
-- Customisable texts and image on the popup  
+- Customisable texts and image on the popup
 - Customisable style of the popup using CSS
 - Available in 2 languages: English and French
 - No branding, no ad on the admin panel. Just a new menu in the settings.
 
-## How it works ?
+### How it works ?
 
 The plugin will add a new menu under your settings, where you can set up the various texts and images used by the popup.
 Then, a popup will appear on every public pages, asking the user for his consent about cookies and tracking, presenting him with 2 choices:
@@ -25,7 +35,7 @@ Then, a popup will appear on every public pages, asking the user for his consent
 
 It's then up to you, and your analytics solution, to check for the `cookie-consent` value and handle it according to the user's wishes.
 
-## How to customize the popup style ?
+### How to customize the popup style ?
 
 A default style is applied to the popup, with the strict minimum (the layout of the popup).
 The popup will inherit the text style, button style and colors from your theme.
@@ -55,43 +65,25 @@ to scope your CSS rules.
 </div>
 ```
 
-## Screenshots
+### Source code
 
-Check other screenshots in the [`assets/`](./assets) folder.
+The source code is available on GitHub at [github.com/doky-fr/can-i-use-cookies](https://github.com/doky-fr/can-i-use-cookies).
 
-![Screenshot 1](./assets/screenshot-2.png)
-![Screenshot 2](./assets/screenshot-6.png)
+Feel free to contribute !
 
-## Developers
+== Frequently Asked Questions ==
 
-This plugin is build using node and webpack to produce an optimized JS code. Once built, the plugin
-is available under the `build/` directory.
+== Screenshots ==
 
-### Requirements
+1. Settings menu
+2. Desktop popup with Twenty-Twenty theme
+3. Mobile popup with Twenty-Twenty theme
+4. Desktop popup with Twenty-Nineteen theme
+5. Mobile popup with Twenty-Nineteen theme
+6. Desktop popup with custom styling, text and logo
+7. Mobile popup with custom styling, text and logo
 
-- Node & yarn
-- WP-CLI (for generation of translation files)
-- gettext (for build of binary translation files)
-  
-### How to use
+== Changelog ==
 
-- Install dependencies
-```shell
-yarn run install
-```
-
-- Build the plugin
-```shell
-yarn run build
-```
-
-- Test locally the plugin using docker-compose (available at [localhost:8080](http://localhost:8080))
-```shell
-yarn run test
-```
-
-## License
-
-WordPress requires that all plugins should be under a GPLv2+ compliant license.
-
-This code is distributed under the GPLv3 or later license.
+= 1.0.0 =
+* First public release

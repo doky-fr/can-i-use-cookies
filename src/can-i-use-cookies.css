@@ -1,16 +1,18 @@
 #can-i-use-cookies {
     display: block;
 
-    z-index: 99999;
+    z-index: 999999;
 
     padding: 16px;
 
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    right: 0;
 
-    background-color: lightslategrey;
+    background-color: lightsteelblue;
+
+    font-size: 1em;
 }
 
 #can-i-use-cookies .container {
@@ -20,9 +22,7 @@
     justify-content: center;
 
     max-width: 1500px;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
 }
 
 #can-i-use-cookies .subcontainer {
@@ -39,9 +39,10 @@
 }
 
 #can-i-use-cookies .text-container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 0 32px;
     flex-grow: 1;
+
+    text-align: justify;
 
     display: flex;
     flex-direction: column;
@@ -51,16 +52,14 @@
 
 #can-i-use-cookies .title {
     font-weight: bold;
-    font-size: 1em;
 
     padding: 0;
     margin: 0;
 }
 
 #can-i-use-cookies .description {
-    font-size: 1em;
     margin: 0;
-    padding-top: 6px;
+    padding: 6px 0 0 0;
 }
 
 #can-i-use-cookies .button-bar {
@@ -71,7 +70,6 @@
 }
 
 #can-i-use-cookies button {
-    font-size: 1em;
     white-space: nowrap;
     cursor: pointer;
 }
@@ -103,15 +101,15 @@
     }
 
     #can-i-use-cookies .text-container {
-        padding-right: 0;
-        padding-left: 16px;
+        padding: 0 0 0 16px;
     }
 
     #can-i-use-cookies .button-bar {
         padding-top: 8px;
         flex-direction: row;
-        width: 100%;
         justify-content: space-evenly;
+
+        width: 100%;
     }
 
     #can-i-use-cookies button:first-child {
@@ -122,6 +120,24 @@
 @media screen and (max-width: 480px) {
     #can-i-use-cookies {
         padding: 8px;
+    }
+
+    #can-i-use-cookies .subcontainer {
+        flex-direction: column;
+    }
+
+    #can-i-use-cookies .text-container {
+        padding: 0;
+    }
+
+    #can-i-use-cookies .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    #can-i-use-cookies .description {
+        width: 100%;
+        text-align: justify;
     }
 }
 

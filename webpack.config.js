@@ -1,73 +1,44 @@
-/**
- * Dependencies
- */
-const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extraction-webpack-plugin");
 const path = require("path");
 
-/**
- * Check environment
- */
-const isProduction = process.env.NODE_ENV === "production";
-const mode = isProduction ? "production" : "development";
-
-/**
- * Webpack config
- */
-const config = {
-    mode,
+module.exports = {
+    mode: 'production',
     entry: {
-        public: path.resolve(process.cwd(), "src/js/public.ts")
+        'can-i-use-cookies': path.resolve(process.cwd(), 'src/can-i-use-cookies.js')
     },
     output: {
-        filename: "[name].js",
-        library: ["[name]"],
-        libraryTarget: "window",
-        path: path.resolve(process.cwd(), "build/js")
-    },
-    externals: {
-        jquery: "jQuery"
+        filename: '[name].js',
+        library: ['[name]'],
+        libraryTarget: 'window',
+        path: path.resolve(process.cwd(), 'build')
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: ['.js']
     },
     module: {
         rules: [
             {
-                test: /\.ts|\.tsx|\.js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "@wordpress/babel-preset-default",
-                            "@babel/typescript"
-                        ],
-                        plugins: [
-                            "@babel/plugin-transform-runtime",
-                            "@babel/proposal-class-properties",
-                            "@babel/proposal-object-rest-spread"
-                        ]
-                    }
-                },
+                use: 'babel-loader'
             },
             {
                 test: /\.css$/i,
                 use: [
-                    "style-loader",
+                    'style-loader',
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
-                            sourceMap: !isProduction,
+                            sourceMap: false,
                             importLoaders: 1,
                             modules: false
                         }
                     },
                     {
-                        loader: "postcss-loader",
+                        loader: 'postcss-loader',
                         options: {
                             plugins: [
-                                require("autoprefixer"),
-                                require("cssnano")
+                                require('autoprefixer'),
+                                require('cssnano')
                             ]
                         }
                     }
@@ -75,24 +46,7 @@ const config = {
             }
         ],
     },
-    plugins: [
-        new DependencyExtractionWebpackPlugin({injectPolyfill: true}),
-    ].filter(Boolean),
     stats: {
         children: false,
     }
 };
-
-/**
- * Activate source map generation if not production
- */
-if (!isProduction) {
-    config.devtool = "source-map";
-    config.module.rules.unshift({
-        test: /\.ts|\.tsx$/,
-        use: require.resolve("source-map-loader"),
-        enforce: "pre",
-    });
-}
-
-module.exports = config;

@@ -1,0 +1,96 @@
+# Copyright (C) 2020 Doky
+# This file is distributed under the same license as the Can I Use Cookies ? plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Can I Use Cookies ? {{plugin-version}}\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-12-12T22:41:24+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: can-i-use-cookies\n"
+
+#. Plugin Name of the plugin
+msgid "Can I Use Cookies ?"
+msgstr "Can I Use Cookies ?"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/doky-fr/can-i-use-cookies"
+msgstr "https://github.com/doky-fr/can-i-use-cookies"
+
+#. Description of the plugin
+msgid "Ask the user for his consent about cookies and tracking, and comply with the EU GDPR privacy law and CCPA regulations."
+msgstr "Demande le consentement de l'utilisateur pour le tracking et l'utilisation de cookies. Rendez votre site conforme à la loi RGPD."
+
+#. Author of the plugin
+msgid "Doky"
+msgstr "Doky"
+
+#. Author URI of the plugin
+msgid "https://doky.fr"
+msgstr "https://doky.fr"
+
+#: class-can-i-use-cookies-admin-page.php:22
+#: class-can-i-use-cookies-admin-page.php:23
+msgid "Cookies Consent"
+msgstr "Consentement Cookies"
+
+#: class-can-i-use-cookies-admin-page.php:63
+msgid "Various texts of the popup"
+msgstr "Textes divers de la popup de consentement"
+
+#: class-can-i-use-cookies-admin-page.php:70
+msgid "Title"
+msgstr "Titre"
+
+#: class-can-i-use-cookies-admin-page.php:78
+msgid "Content"
+msgstr "Description"
+
+#: class-can-i-use-cookies-admin-page.php:86
+msgid "\"Accept\" button"
+msgstr "Bouton \"Accepter\""
+
+#: class-can-i-use-cookies-admin-page.php:94
+msgid "\"Deny\" button"
+msgstr "Bouton \"Refuser\""
+
+#: class-can-i-use-cookies-admin-page.php:106
+msgid "Popup image"
+msgstr "Image de la popup"
+
+#: class-can-i-use-cookies-admin-page.php:113
+msgid "Image URL"
+msgstr "URL de l'image"
+
+#: class-can-i-use-cookies-admin-page.php:155
+msgid "Please specify the various texts used by the consent popup."
+msgstr "Veuillez entrer les textes affichés par la popup de consentement."
+
+#: class-can-i-use-cookies-admin-page.php:159
+msgid "Please specify the URL of the image displayed in the consent popup."
+msgstr "Veuillez entrer l'URL de l'image affichée par la popup de consentement."
+
+#: class-can-i-use-cookies-admin-page.php:161
+msgid "If omitted, a default cookie image will be displayed."
+msgstr "Si omis, une image par défaut sera affichée"
+
+#: class-can-i-use-cookies-defaults.php:13
+msgid "This website uses cookies :)"
+msgstr "Ce site internet utilise les cookies :)"
+
+#: class-can-i-use-cookies-defaults.php:17
+msgid "We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads, to analyze our website traffic, and to understand where our visitors are coming from."
+msgstr "Nous utilisons des cookies pour pouvoir améliorer votre expérience, afficher du contenu personnalisé, des publicités ciblées, et analyser notre traffic."
+
+#: class-can-i-use-cookies-defaults.php:21
+msgid "Approve"
+msgstr "Accepter"
+
+#: class-can-i-use-cookies-defaults.php:25
+msgid "Deny"
+msgstr "Refuser"
