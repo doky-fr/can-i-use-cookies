@@ -1,10 +1,16 @@
 # Can I Use Cookies ? WordPress plugin
+![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/can-i-use-cookies?label=can-i-use-cookies&style=flat-square)
+![WordPress Plugin Required PHP Version](https://img.shields.io/wordpress/plugin/required-php/can-i-use-cookies?style=flat-square)
+![WordPress Plugin: Required WP Version](https://img.shields.io/wordpress/plugin/wp-version/can-i-use-cookies?style=flat-square)
+![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/can-i-use-cookies?style=flat-square)
 
 ![Can I Use Cookies ?](./assets/banner-1544x500.jpg)
 
 WordPress plugin that does one thing but does it right:
 
 **Ask the user for his consent about cookies and tracking.**
+
+Available on the [WordPress Plugins Repository](https://wordpress.org/plugins/can-i-use-cookies)
 
 ## Features
 

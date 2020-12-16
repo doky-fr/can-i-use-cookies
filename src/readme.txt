@@ -1,6 +1,6 @@
-=== Can i use cookies ? ===
+=== Can I Use Cookies ? ===
 Contributors: fcaylus
-Tags: cookies, consent, gdpr, ccpa
+Tags: cookie, cookies, consent, popup, gdpr, ccpa
 Requires at least: 5.4
 Tested up to: 5.6
 Stable tag: trunk
@@ -47,7 +47,7 @@ or whatever technique to add CSS to your page).
 For reference, here is the popup HTML code. You can use the main container id (`#can-i-use-cookies`)
 to scope your CSS rules.
 
-```html
+`
 <div id="can-i-use-cookies">
     <div class="container">
         <div class="subcontainer">
@@ -63,7 +63,7 @@ to scope your CSS rules.
         </div>
     </div>
 </div>
-```
+`
 
 ### Source code
 
