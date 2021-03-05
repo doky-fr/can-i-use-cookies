@@ -14,11 +14,11 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die;
 }
 
-define( 'CAN_I_USE_COOKIES_PLUGIN_VERSION', '{{plugin-version}}' );
+define('CAN_I_USE_COOKIES_PLUGIN_VERSION', '{{plugin-version}}');
 
-require_once plugin_dir_path( __FILE__ ) . 'class-can-i-use-cookies.php';
+require_once plugin_dir_path(__FILE__) . 'class-can-i-use-cookies.php';
 Can_I_Use_Cookies::instance();
