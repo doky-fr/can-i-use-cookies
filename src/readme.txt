@@ -2,7 +2,7 @@
 Contributors: fcaylus
 Tags: cookie, cookies, consent, popup, gdpr, ccpa
 Requires at least: 5.4
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: trunk
 Requires PHP: 7.0
 License: GPLv3 or later
