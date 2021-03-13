@@ -76,6 +76,9 @@ Check other screenshots in the [`assets/`](./assets) folder.
 This plugin is build using node and webpack to produce an optimized JS code. Once built, the plugin is available under
 the `build/` directory.
 
+To publish a new version of the plugin to WordPress's SVN repo, follow 
+[these example steps](https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/#examples).
+
 ### Requirements
 
 - Node & yarn
