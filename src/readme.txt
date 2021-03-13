@@ -85,5 +85,9 @@ Feel free to contribute !
 
 == Changelog ==
 
+= 1.0.1 =
+* Reformat PHP code
+* Tested up to WordPress 5.7
+
 = 1.0.0 =
 * First public release
