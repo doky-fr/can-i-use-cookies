@@ -85,7 +85,7 @@ msgstr "Ce site internet utilise les cookies :)"
 
 #: class-can-i-use-cookies-defaults.php:17
 msgid "We use cookies and other tracking technologies to improve your browsing experience on our website, to show you personalized content and targeted ads, to analyze our website traffic, and to understand where our visitors are coming from."
-msgstr "Nous utilisons des cookies pour pouvoir améliorer votre expérience, afficher du contenu personnalisé, des publicités ciblées, et analyser notre traffic."
+msgstr "Nous utilisons des cookies pour pouvoir améliorer votre expérience, afficher du contenu personnalisé, des publicités ciblées, et analyser notre trafic."
 
 #: class-can-i-use-cookies-defaults.php:21
 msgid "Approve"
